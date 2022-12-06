@@ -1,0 +1,515 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: context-menu;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  color-scheme: light !important;
+}
+
+.splash {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash .image {
+  width: 50%;
+  height: 50vw;
+}
+
+.splash .image img {
+  width: 100%;
+}
+
+.bank-auth {
+  padding: 35px;
+    font-family: 'Inter', sans-serif;
+}
+
+.bank-auth .nav-tag {
+  margin: 10px 0 32px;
+    background: #DFD9F2;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.bank-auth .nav-tag a {
+  width: calc(50% - 10px);
+  height: 30px;
+  border-radius: 7px;
+  color: #493399;
+  text-decoration: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.3s;
+}
+
+.bank-auth .nav-tag a.active {
+  background: white;
+}
+
+.bank-hom.store label,
+.bank-auth label {
+  color: #6F609F;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.bank-hom.store label span,
+.bank-auth label span{
+  color: red;
+}
+
+.bank-hom.store input,
+.bank-auth input {
+  height: 50px;
+    color: #6F609F !important;
+    border: 1px solid #493399;
+        box-shadow: inset 0em -3px 0px -1px #ae9fdf;
+}
+
+.bank-hom.store .btn,
+.bank-hom .section.max .btn,
+.bank-auth .btn {
+  width: 100%;
+  margin-top: 30px;
+  background: #493399;
+  color: #fff;
+  height: 50px;
+      box-shadow: inset 0em -3px 0px -1px #ae9fdf;
+}
+
+.bank-hom {
+  padding: 35px;
+  font-family: 'Inter', sans-serif;
+}
+
+.bank-hom .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 10px;
+}
+
+.bank-hom .top .hamburger {
+  width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.bank-hom .top .hamburger span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background: #493399;
+  top: 0;
+}
+
+.bank-hom .top .hamburger span:nth-child(2) {
+  top: 8px;
+}
+
+.bank-hom .top .hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+.bank-hom .top img {
+  width: 75px;
+}
+
+.bank-hom .info {
+  margin-bottom: 25px;
+  background: #FEEEE9;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.bank-hom .info .account {
+  width: 120px;
+    background: #DFD9F2;
+    border-radius: 7px;
+    padding: 7px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #493399;
+}
+
+.bank-hom .info .title {
+  font-size: 13px;
+  color: #493399;
+}
+
+.bank-hom .info .no {
+  font-size: 13px;
+    color: #493399;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.bank-hom .info .bal {
+  margin-top: 15px;
+  color: #493399;
+}
+
+.bank-hom .info .bal span {
+  font-weight: 700;
+}
+
+.bank-hom .search .mb-3 {
+  position: relative;
+}
+
+.bank-hom .search .mb-3 span {
+  position: absolute;
+    right: 13px;
+    top: calc(50% - 13px);
+}
+
+.bank-hom .search .mb-3 span svg {
+  fill: #6F609F;
+}
+
+.bank-hom .search .mb-3 input {
+  height: 50px;
+    color: #6F609F !important;
+    border: 1px solid #493399;
+    box-shadow: inset 0em -3px 0px -1px #ae9fdf;
+    margin: 30px 0 45px;
+}
+
+.bank-hom .nav-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.bank-hom .nav-line .nav-item {
+  width: calc(25% - 5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bank-hom .nav-line .nav-item svg {
+  fill: #6F609F;
+  font-size: 35px;
+}
+
+.bank-hom .nav-line .nav-item span {
+  color: #6F609F;
+    margin: 10px 0;
+}
+
+.bank-hom .up {
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.bank-hom .up .back {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.bank-hom .up .back span {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background: #493399;
+  top: 10px;
+}
+
+.bank-hom .up .back span:nth-child(1) {
+  top: 5px;
+  width: 15px;
+  transform: rotate(-32deg);
+}
+
+.bank-hom .up .back span:nth-child(3) {
+  width: 15px;
+  top: 14px;
+  transform: rotate(32deg);
+}
+
+.bank-hom .up h3 {
+  margin: 0;
+    font-size: 21px;
+    color: #493399;
+    font-weight: 400;
+    padding-left: 10px;
+}
+
+.bank-hom .item-link {
+  box-shadow: inset 0em -3px 0px -1px #ae9fdf;
+  padding: 15px;
+  margin: 30px 0;
+  border-radius: 10px;
+  transition: all ease 0.3s;
+}
+
+.bank-hom .item-link:hover {
+  background-color: #6F609F;
+}
+
+.bank-hom .item-link svg {
+  fill: #493399;
+  font-size: 25px;
+}
+
+.bank-hom .item-link span {
+  color: #493399;
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.bank-hom .section {
+  margin: 35px 0;
+}
+
+.bank-hom .section.mini {
+  margin: 25px 0;
+}
+
+.bank-hom .section.null {
+  margin: 35px -35px;
+  padding: 25px 35px;
+  background: #FEEEE9;
+}
+
+.bank-hom .section .title {
+  color: #493399;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.bank-hom .section .subtitle {
+  font-size: 14px;
+  color: #493399;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.bank-hom .section .tile {
+  height: 30px;
+  color: #493399;
+  display: flex;
+  margin: 5px 0;
+}
+
+.bank-hom .section .tile .form-check.form-switch{
+  display: flex;
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bank-hom .section .tile input:checked {
+  background-color: #6F609F;
+    border-color: #6F609F;
+}
+
+.bank-hom .section.mini .subtitle {
+  margin: 10px 0;
+}
+
+.bank-hom .section.mini .title {
+  display: flex;
+  align-items: center;
+}
+
+.bank-hom .section.mini svg {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.bank-hom .section.max {
+    margin: 100px 0;
+}
+
+.bank-hom .section.full {
+  height: calc(100vh - 20px);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.bank-hom .section.max .subtitle{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.bank-hom .section.max input {
+  height: 50px;
+  color: #6F609F !important;
+  border: none;
+      box-shadow: inset 0em -3px 0px -1px #ae9fdf;
+}
+
+.bank-hom .section.max .btn {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bank-hom.store .up {
+  align-items: center;
+}
+
+.bank-hom.store .up img {
+  width: 75px;
+}
+
+.bank-hom.store .up h2 {
+  margin: 0;
+  color: #6F609F;
+  font-weight: 600;
+  font-size: 23px;
+  margin-top: 10px;
+}
+
+.bank-hom.store .image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: -5px 0 35px;
+}
+
+.bank-hom.store .image img {
+  width: 75%;
+}
+
+.bank-hom.store h2 {
+  font-size: 17px;
+  color: #493399;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.bank-hom.store .amount {
+  color: #493399;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.bank-hom.store .btn {
+  background: #F38A20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  margin-top: 45px;
+}
+
+.bank-hom.store .btn svg {
+  margin-right: 10px;
+}
+
+.bank-hom .aler {
+  position: absolute;
+  background: #EFEFEF;
+  width: calc(100% - 40px);
+  border-radius: 10px;
+  left: 20px;
+  padding: 10px 20px;
+}
+
+.bank-hom .aler .top {
+  margin: 0 0 5px;
+}
+
+.bank-hom .aler .top .left {
+  display: flex;
+  align-items: center;
+}
+
+.bank-hom .aler .top .left img{
+  width: 35px;
+  margin-right: 10px;
+}
+
+.bank-hom .aler .title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.bank-hom .aler .subtitle {
+  font-size: 13px;
+  margin-top: 0px;
+}
+
+.bank-hom .full {
+  height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-hom .full .inner {
+  border: 1px solid #6F609F;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.bank-hom .full .inner .title {
+  font-size: 25px;
+    font-weight: 700;
+    color: #493399;
+}
+
+.bank-hom .full .inner p {
+  color: #493399;
+}
+
+.bank-hom .full .inner img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.bank-hom .full .inner .go-back {
+  color: #F1724C;
+  text-decoration: underline;
+  margin-top: 15px;
+}
+
+.bank-hom .full .inner .btn {
+  width: 100%;
+  margin: 30px 0;
+  background: #356927;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
