@@ -1,4 +1,4 @@
-body {
+:body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,8 +28,8 @@ a {
 }
 
 .splash .image {
-  width: 50%;
-  height: 50vw;
+  width: 25%;
+  height: 25vw;
 }
 
 .splash .image img {
@@ -42,12 +42,12 @@ a {
 }
 
 .bank-auth .nav-tag {
-  margin: 10px 0 32px;
+  margin: 0px 0 42px;
     background: #DFD9F2;
     border-radius: 7px;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 3px;
 }
 
 .bank-auth .nav-tag a {
@@ -57,7 +57,7 @@ a {
   color: #493399;
   text-decoration: none;
   background: transparent;
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -100,9 +100,22 @@ a {
       box-shadow: inset 0em -3px 0px -1px #ae9fdf;
 }
 
+.bank-hom.store .btn:active,
+.bank-hom .section.max .btn:active,
+.bank-hom.store .btn:hover,
+.bank-hom .section.max .btn:hover,
+.bank-auth .btn:active,
+.bank-auth .btn:hover {
+  background: #493399;
+}
+
 .bank-hom {
   padding: 35px;
   font-family: 'Inter', sans-serif;
+}
+
+.bank-hom.orig {
+  padding: 5px 35px 65px;
 }
 
 .bank-hom .top {
@@ -137,7 +150,7 @@ a {
 }
 
 .bank-hom .top img {
-  width: 75px;
+  width: 60px;
 }
 
 .bank-hom .info {
@@ -216,12 +229,14 @@ a {
 
 .bank-hom .nav-line .nav-item svg {
   fill: #6F609F;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .bank-hom .nav-line .nav-item span {
   color: #6F609F;
     margin: 10px 0;
+  font-size: 12px;
+  font-weight: 300;
 }
 
 .bank-hom .up {
@@ -247,7 +262,7 @@ a {
 }
 
 .bank-hom .up .back span:nth-child(1) {
-  top: 5px;
+  top: 6px;
   width: 15px;
   transform: rotate(-32deg);
 }
@@ -294,7 +309,7 @@ a {
 }
 
 .bank-hom .section.mini {
-  margin: 25px 0;
+  margin: 35px 0;
 }
 
 .bank-hom .section.null {
@@ -351,7 +366,7 @@ a {
 }
 
 .bank-hom .section.max {
-    margin: 100px 0;
+    margin: 35px 0;
 }
 
 .bank-hom .section.full {
@@ -439,10 +454,22 @@ a {
 .bank-hom .aler {
   position: absolute;
   background: #EFEFEF;
-  width: calc(100% - 40px);
+  width: calc(100% + 40px);
   border-radius: 10px;
   left: 20px;
   padding: 10px 20px;
+  animation: alerrr 0.5s normal 1.5s forwards;
+  position: relative;
+  top: -20px;
+  opacity: 0;
+left: -20px;
+}
+
+@keyframes alerrr {
+  to {
+    opacity:1;
+    top: 0
+  }
 }
 
 .bank-hom .aler .top {
@@ -512,4 +539,42 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn_text { 
+  transition: all 0.2s;
+} 
+
+.btn-load { 
+  position: relative;
+} 
+
+.btn-load .btn_text { 
+  visibility: hidden; 
+  opacity: 0;
+} 
+
+.btn-load::after { 
+  content: ''; 
+  position: absolute; 
+  width: 16px; 
+  height: 16px; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  border: 4px solid transparent; 
+  border-top-color: #ffffff; 
+  border-radius: 50%; 
+  animation: button-loading-spinner 1s ease infinite;
+} 
+
+@keyframes button-loading-spinner { 
+  from { 
+    transform: rotate(0turn); 
+  } 
+  to { 
+    transform: rotate(1turn); 
+  }
 }

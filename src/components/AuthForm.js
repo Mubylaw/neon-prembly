@@ -49,6 +49,7 @@ export default class AuthForm extends Component {
       seccode: '',
       zipcode: '',
       exdate: '',
+      search: ''
     }
   }
 
@@ -78,6 +79,12 @@ export default class AuthForm extends Component {
       maximumFractionDigits: 2,
     })
     this.setState({ val, smalVal })
+    setTimeout(()=>{
+      if (!this.state.splash) {
+         this.setState({splash: true})
+      } 
+    },2500)
+      
   }
 
   handleChange = (e) => {
@@ -116,9 +123,13 @@ export default class AuthForm extends Component {
     //     this.setState({ view: false })
     //     return
     //   })
-    this.setState({
+    this.setState({view:true})
+    setTimeout(()=>{
+      this.setState({
       home: true,
+        view: false
     })
+    },1000)
   }
 
   handleBack = () => {
@@ -135,6 +146,29 @@ export default class AuthForm extends Component {
     this.setState({
       success: false,
     })
+  }
+
+  handlePass = () => {
+    this.setState({view:true})
+    setTimeout(()=>{
+      this.setState({
+      homVal: this.state.homVal + 1,
+        view: false
+    })
+    window.scrollTo({ 
+      top: 0,
+    });
+    },1000)
+  }
+
+  handleCam = () => {
+    this.setState({view:true})
+    setTimeout(()=>{
+      this.setState({
+      homVal: this.state.homVal + 1,
+        view: false
+    })
+    },2500)
   }
 
   render() {
@@ -154,6 +188,7 @@ export default class AuthForm extends Component {
       seccode,
       zipcode,
       exdate,
+      search
     } = this.state
     const { buttonText, signUp, errors, history, removeError } = this.props
 
@@ -219,7 +254,7 @@ export default class AuthForm extends Component {
                           name="firstName"
                           onChange={this.handleChange}
                           value={firstName}
-                          placeholder="Ex: Sam"
+                          
                         />
                       </div>
                     </div>
@@ -236,7 +271,7 @@ export default class AuthForm extends Component {
                           name="lastName"
                           onChange={this.handleChange}
                           value={lastName}
-                          placeholder="Ex: Smith"
+                          
                         />
                       </div>
                     </div>
@@ -250,7 +285,7 @@ export default class AuthForm extends Component {
                   <input
                     type="email"
                     className="form-control"
-                    placeholder="name@example.com"
+                    
                     id="email"
                     name="email"
                     onChange={this.handleChange}
@@ -268,7 +303,7 @@ export default class AuthForm extends Component {
                     id="password"
                     name="password"
                     onChange={this.handleChange}
-                    placeholder="Ex: Jdj%u4@8$53"
+                    
                   />
                 </div>
                 <div className="links">
@@ -286,7 +321,7 @@ export default class AuthForm extends Component {
         ) : (
           <>
             {homVal === 0 ? (
-              <div className="bank-hom">
+              <div className="bank-hom orig">
                 <div className="top">
                   <div
                     className="hamburger"
@@ -318,11 +353,11 @@ export default class AuthForm extends Component {
                     <input
                       type="type"
                       className="form-control"
-                      id="LastName"
-                      name="lastName"
+                      id="search"
+                      name="search"
                       onChange={this.handleChange}
-                      value={lastName}
-                      placeholder="Ex: Smith"
+                      value={search}
+                      placeholder="Search"
                     />
                   </div>
                 </div>
@@ -618,7 +653,7 @@ export default class AuthForm extends Component {
                   <div
                     type="submit"
                     className={`btn ${this.state.view ? 'btn-load' : ''}`}
-                    onClick={() => this.setState({ homVal: homVal + 1 })}
+                    onClick={this.handlePass}
                   >
                     <span className="btn_text">Submit</span>
                   </div>
@@ -642,7 +677,7 @@ export default class AuthForm extends Component {
                   <div
                     type="submit"
                     className={`btn ${this.state.view ? 'btn-load' : ''}`}
-                    onClick={() => this.setState({ homVal: homVal + 1 })}
+                    onClick={this.handleCam}
                   >
                     <span className="btn_text">
                       <CameraAltOutlinedIcon />
@@ -670,7 +705,7 @@ export default class AuthForm extends Component {
                 </div>
               </div>
             ) : homVal === 7 ? (
-              <div className="bank-hom store">
+              <div className="bank-hom store orig">
                 <div className="up">
                   <img
                     src="https://png.pngtree.com/png-vector/20200121/ourmid/pngtree-orange-logo-abstract-vector-designs-png-image_2132671.jpg"
@@ -697,6 +732,7 @@ export default class AuthForm extends Component {
                       type="text"
                       className="form-control"
                       id="cardname"
+name="cardname"
                       onChange={this.handleChange}
                       value={cardname}
                     />
@@ -710,11 +746,12 @@ export default class AuthForm extends Component {
                       type="text"
                       className="form-control"
                       id="cardnumber"
+                      name="cardnumber"
                       onChange={this.handleChange}
                       value={cardnumber}
                     />
                   </div>
-                  <div className="row">
+                  <div className="row mb-3">
                     <div className="col-6">
                       <label htmlFor="exdate" className="form-label">
                         Expiry Date
@@ -724,6 +761,7 @@ export default class AuthForm extends Component {
                         type="text"
                         className="form-control"
                         id="exdate"
+                        name="exdate"
                         onChange={this.handleChange}
                         value={exdate}
                       />
@@ -737,6 +775,7 @@ export default class AuthForm extends Component {
                         type="text"
                         className="form-control"
                         id="seccode"
+                        name="seccode"
                         onChange={this.handleChange}
                         value={seccode}
                       />
@@ -751,6 +790,7 @@ export default class AuthForm extends Component {
                       type="text"
                       className="form-control"
                       id="zipcode"
+                      name="zipcode"
                       onChange={this.handleChange}
                       value={zipcode}
                     />
@@ -758,14 +798,12 @@ export default class AuthForm extends Component {
 
                   <div className="submit-links">
                     <div
-                      className="btn"
-                      onClick={() => {
-                        this.setState({
-                          homVal: homVal + 1,
-                        })
-                      }}
-                    >
-                      <LockOutlinedIcon /> Pay N {smalVal}
+                      className={`btn ${this.state.view ? 'btn-load' : ''}`}
+                      onClick={this.handlePass}
+                  >
+                    <span className="btn_text">
+                      
+                      <LockOutlinedIcon /> Pay N {smalVal}</span>
                     </div>
                   </div>
                 </form>
@@ -842,11 +880,11 @@ export default class AuthForm extends Component {
                   <h3>Face Capture</h3>
                 </div>
                 <div className="section max">
-                  <div className="subtitle">Face Capture</div>
+                  <VideoStream />
                   <div
                     type="submit"
                     className={`btn ${this.state.view ? 'btn-load' : ''}`}
-                    onClick={() => this.setState({ homVal: homVal + 1 })}
+                    onClick={this.handleCam}
                   >
                     <span className="btn_text">
                       <CameraAltOutlinedIcon />
